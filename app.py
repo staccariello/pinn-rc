@@ -19,8 +19,8 @@ class PINN_RC_Charging(nn.Module):
             nn.Linear(32, 1)
         )
         # Parametri fisici incogniti: Vs e tau (log_tau -> tau > 0)
-        Vs_init = 4.0          # valore di partenza
-        log_tau_init = np.log(0.05)  # valore di partenza per tau
+        Vs_init = 0.0          # valore di partenza
+        log_tau_init = np.log(0.001)  # valore di partenza per tau
 
         self.Vs_param = nn.Parameter(torch.tensor(Vs_init, dtype=torch.float32))
         self.log_tau = nn.Parameter(torch.tensor(log_tau_init, dtype=torch.float32))
